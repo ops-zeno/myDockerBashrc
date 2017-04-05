@@ -71,13 +71,13 @@ function docker-update(){
 }
 
 # kill all the container which is running
-alias dockerkill='docker kill $(docker ps -a -q)'
+alias docker-kill='docker kill $(docker ps -a -q)'
 
 # del all the stopped container
-alias dockercleanc='docker rm $(docker ps -a -q)'
+alias docker-cleanc='docker rm $(docker ps -a -q)'
 
 # del all the dangling images
-alias dockercleani='docker rmi $(docker images -q -f dangling=true)'
+alias docker-cleani='docker rmi $(docker images -q -f dangling=true)'
 
 # both the effects below
-alias dockerclean='dockercleanc || true && dockercleani'
+alias docker-clean='dockercleanc || true && dockercleani'
